@@ -480,6 +480,30 @@ public final class WebDriverActions extends BaseClass {
 		int count = elements.size();
 		return count;
 	}
+	
+	// Element Click
+		public void ElementsClick(By by) {
+
+			List<WebElement> elements = driver.findElements(by);
+			int count = elements.size();
+			WebElement ele =elements.get(count-2);
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", ele);
+		
+		}
+		
+		// Element Click
+				public void ElementsClick1(By by) {
+
+					List<WebElement> elements = driver.findElements(by);
+					int count = elements.size();
+					WebElement ele =elements.get(count-1);
+					JavascriptExecutor executor = (JavascriptExecutor) driver;
+					executor.executeScript("arguments[0].click();", ele);
+				
+					
+					
+				}
 
 	// Verify Download
 	public boolean isFileDownloaded(String fileName) {

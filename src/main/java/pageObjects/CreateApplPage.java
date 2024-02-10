@@ -19,17 +19,17 @@ import utilities.CustomMethods;
 import utilities.ExcelLibrary;
 import utilities.WebDriverActions;
 
-public class LoginPage {
+public class CreateApplPage {
 	
 	WebDriverActions ui=new WebDriverActions();
 	
-	public By plusSign = By.xpath("//a[@id='LCR']");
+	public By panField = By.xpath("//input[@id='CBSI_PAN']");
 	
-	public By individualBtn = By.id("Indvdl");
+	public By verifyBtn = By.xpath("(//button[text()='Verify'])[1]");
 	
-	public By nonindividualBtn = By.id("NonIndvdl");
+	public By uploadVerifyBtn = By.xpath("(//button[text()='Upload Verify'])[1]");
 	
-	public By doneBtn = By.xpath("//button[@id='InitWFI']");
+	public By proofDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[1]/ul/li");
 	
 	public By unameLbl = By.xpath("(//label[@class='active'])[1]");
 	
