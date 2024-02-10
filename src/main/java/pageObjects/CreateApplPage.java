@@ -31,24 +31,6 @@ public class CreateApplPage {
 	
 	public By proofDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[1]/ul/li");
 	
-	public By unameLbl = By.xpath("(//label[@class='active'])[1]");
 	
-	public By loginBtn = By.xpath("//button[@id='MAilSMSMobIotp' and text()='LOGIN']");
-	
-	public By submitBtn = By.xpath("//input[@type='submit']");
-	
-	public void selectDrop(String varText) throws Exception {
-		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
-	//	ui.JSclick(dynamicMenu);
-		Thread.sleep(1000);
-		ui.ElementsClick(dynamicMenu);
-	}
-	
-	public void selectDrop1(String varText) throws Exception {
-		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
-	//	ui.JSclick(dynamicMenu);
-		Thread.sleep(1000);
-		ui.ElementsClick1(dynamicMenu);
-	}
 	
 }
