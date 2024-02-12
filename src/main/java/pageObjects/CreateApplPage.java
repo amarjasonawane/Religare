@@ -25,30 +25,30 @@ public class CreateApplPage {
 	
 	public By panField = By.xpath("//input[@id='CBSI_PAN']");
 	
+	public By aadharField = By.xpath("//input[@id='CBSI_AADHAR']");
+	
 	public By verifyBtn = By.xpath("(//button[text()='Verify'])[1]");
+	
+	public By aadharVerifyBtn = By.xpath("(//button[text()='Verify'])[4]");
+	
+	public By verifyBtnTxt = By.xpath("//button[text()='Verified']");
 	
 	public By uploadVerifyBtn = By.xpath("(//button[text()='Upload Verify'])[1]");
 	
 	public By proofDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[1]/ul/li");
 	
-	public By unameLbl = By.xpath("(//label[@class='active'])[1]");
+	public By karzaDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[2]/ul/li");
 	
-	public By loginBtn = By.xpath("//button[@id='MAilSMSMobIotp' and text()='LOGIN']");
+	public By panAdvSubmitBtn = By.xpath("//button[@id='KarzaPopup']");
 	
-	public By submitBtn = By.xpath("//input[@type='submit']");
+	public By panAdvProBtn = By.xpath("//div/input[@id='PANADPROFILE']");
 	
-	public void selectDrop(String varText) throws Exception {
-		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
-	//	ui.JSclick(dynamicMenu);
-		Thread.sleep(1000);
-		ui.ElementsClick(dynamicMenu);
-	}
+	public By panAuthBtn = By.xpath("//div/input[@id='PANAUTH']");
 	
-	public void selectDrop1(String varText) throws Exception {
-		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
-	//	ui.JSclick(dynamicMenu);
-		Thread.sleep(1000);
-		ui.ElementsClick1(dynamicMenu);
-	}
+	public By panStatChkBtn = By.xpath("//div/input[@id='PANSTATUSCHK']");
+	
+	public By panSubmitBtn = By.xpath("//div/button[@id='PANPopup']");
+	
+	public By uploadBtn = By.xpath("(//input[@type='file'])[1]");
 	
 }

@@ -16,6 +16,7 @@ import org.testng.asserts.SoftAssert;
 
 import base.BaseClass;
 import base.FrameworkConstants;
+import pageObjects.CreateApplPage;
 import pageObjects.LoginPage;
 import utilities.CustomMethods;
 import utilities.ExcelLibrary;
@@ -29,22 +30,22 @@ public class LoginToApp extends BaseClass {
 	WebDriverActions ui;
 	ExcelLibrary excel;
 	SoftAssert s;
-
 	LoginPage fp;
+	CreateApplPage cap;
 	
 	@BeforeMethod
 	public void Login() throws IOException, AWTException, InterruptedException {
-		ScreenRecorderUtil.startRecord("SampleTest");
+		ScreenRecorderUtil.startRecord("LoginTest");
 	}
 
 	@Test(priority = 0, enabled = true)
 	public void test_Login() throws Exception {
 		ui = new WebDriverActions();
 		s = new SoftAssert();
-		// excel=new ExcelLibrary();
+		excel=new ExcelLibrary();
 		fp = new LoginPage();
 
-		CustomMethods.login("eslsales1","themepass");
+		CustomMethods.login(excel.getCellData("Login", 1, 1),excel.getCellData("Login", 1, 2));
 		Reporter.pass(ui.getText(fp.unameLbl));
 
 		ui.click(fp.loginBtn);
@@ -82,17 +83,63 @@ public class LoginToApp extends BaseClass {
 
 		ui.JSclick(fp.doneBtn);
 		Reporter.pass("Done button is clicked");
+		Thread.sleep(1000);
 		
 		ScreenRecorderUtil.stopRecord();
 
 	}
 	
-	@Test(priority = 0, enabled = true)
+	@Test(priority = 1, enabled = true, dependsOnMethods="test_Login")
 	public void test_CreateApplication() throws Exception {
 		ui = new WebDriverActions();
 		s = new SoftAssert();
-		// excel=new ExcelLibrary();
-		fp = new LoginPage();
+		excel=new ExcelLibrary();
+		cap = new CreateApplPage();
+		
+		ui.type(cap.panField, excel.getCellData("Login", 1, 4));
+		Reporter.pass("Pan Number is entered");
+		
+		ui.JSclick(cap.verifyBtn);
+		Reporter.pass("Verify button is clicked");
+		Thread.sleep(1000);
+		
+		ui.JSclick(cap.panAdvProBtn);
+		Reporter.pass("PAN Advanced Profile is clicked");
+		Thread.sleep(1000);
+		
+		ui.JSclick(cap.panSubmitBtn);
+		Reporter.pass("Submit BUtton is clicked");
+		
+		Thread.sleep(3000);
+	//	WebDriverActions.refreshPage(getDriver());
+
+	
+	  ui.JSclick(cap.panAdvSubmitBtn);
+	  Reporter.pass("Advanced Profile Submit Button is clicked");
+	  
+	  Thread.sleep(3000); 
+	//  WebDriverActions.refreshPage(getDriver());
+	  
+	  Reporter.pass("Verified Button Text :  "+ui.getAttribute(cap.verifyBtnTxt, "value"));
+	  
+	  Reporter.pass("Verified Button Text :  "+ui.getText(cap.verifyBtnTxt));
+	 	
+	  s.assertEquals(ui.getText(cap.verifyBtnTxt), "Verified");
+	  
+	  String path =System.getProperty("user.dir") + "\\TestData" + "\\" + "FCM_EnvironmentalDiferences.xlsx" ;
+	  ui.uploadFCMFile(cap.uploadBtn, path);
+	  
+	  ui.ElementsClick1(cap.proofDropDown);
+	  
+	  ui.type(cap.aadharField, excel.getCellData("Login", 1, 5));
+	  Reporter.pass("Aadhar Number is entered");
+	  
+	  ui.JSclick(cap.aadharVerifyBtn);
+	  
+	  ui.ElementsClick(cap.karzaDropDown);
+	  
+	  s.assertAll();
+		
 	}
 
 }

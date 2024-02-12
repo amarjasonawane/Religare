@@ -22,7 +22,7 @@ public final class FrameworkConstants {
 	public static String getExcelpath() {
 		ConfigurationSupport cs=new ConfigurationSupport(getGlobalpropertiespath());
 		
-		return EXCELPATH + cs.getProperty("testdata") + ".xlsx";
+		return EXCELPATH ;
 	}
 	
 	public static String getExtentreportfolderpath() {
@@ -74,7 +74,7 @@ public final class FrameworkConstants {
 	
 	private static final String EDGEDRIVERPATH=System.getProperty("user.dir")+"\\executables\\msedgedriver.exe";
 	private static final String CHROMEDRIVERPATH=System.getProperty("user.dir")+"\\executables\\chromedriver.exe";
-	private static String EXCELPATH=System.getProperty("user.dir")+"\\resources\\Testdata\\";
+	private static String EXCELPATH=System.getProperty("user.dir")+"\\Testdata\\Data.xlsx";
 	private static final String EXTENTREPORTFOLDERPATH="C:\\SamplePrj\\Reports";
 	private static String extentReportFilePath="";
 	private static final String GLOBALPROPERTIESPATH=System.getProperty("user.dir")+"\\configuration files\\global.properties";
