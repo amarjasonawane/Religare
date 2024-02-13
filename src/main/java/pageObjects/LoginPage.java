@@ -41,14 +41,14 @@ public class LoginPage {
 		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
 	//	ui.JSclick(dynamicMenu);
 		Thread.sleep(1000);
-		ui.ElementsClick(dynamicMenu);
+		ui.ElementsClick(dynamicMenu,2);
 	}
 	
 	public void selectDrop1(String varText) throws Exception {
 		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
 	//	ui.JSclick(dynamicMenu);
 		Thread.sleep(1000);
-		ui.ElementsClick1(dynamicMenu);
+		ui.ElementsClick(dynamicMenu,1);
 	}
 	
 }

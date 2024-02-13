@@ -120,26 +120,40 @@ public class LoginToApp extends BaseClass {
 	  Thread.sleep(3000); 
 	//  WebDriverActions.refreshPage(getDriver());
 	  
-	  Reporter.pass("Verified Button Text :  "+ui.getAttribute(cap.verifyBtnTxt, "value"));
-	  
 	  Reporter.pass("Verified Button Text :  "+ui.getText(cap.verifyBtnTxt));
 	 	
 	  s.assertEquals(ui.getText(cap.verifyBtnTxt), "Verified");
 	  
-	  String path =System.getProperty("user.dir") + "\\TestData" + "\\" + "FCM_EnvironmentalDiferences.xlsx" ;
-	  ui.uploadFCMFile(cap.uploadBtn, path);
+	  String path =System.getProperty("user.dir") + "\\Testdata" + "\\" + "FCM_EnvironmentalDiferences.xlsx" ;
+	//  ui.uploadFCMFile(cap.uploadBtn, path);
+	  Thread.sleep(5000);
+//	  ui.JSclick(cap.uploadBtn);
+//	  Thread.sleep(2000);
 	  
-	  ui.ElementsClick1(cap.proofDropDown);
+	  ui.ElementsClick(cap.proofDropDown,4);
 	  
 	  ui.type(cap.aadharField, excel.getCellData("Login", 1, 5));
 	  Reporter.pass("Aadhar Number is entered");
 	  
 	  ui.JSclick(cap.aadharVerifyBtn);
+	  Thread.sleep(1000);
 	  
-	  ui.ElementsClick(cap.karzaDropDown);
+	  ui.ElementsClick(cap.karzaDropDown,7);
 	  
 	  s.assertAll();
 		
 	}
+	
+	@Test(priority = 2, enabled = true, dependsOnMethods="test_CreateApplication")
+	public void test_FillApplication() throws Exception {
+		ui = new WebDriverActions();
+		s = new SoftAssert();
+		excel=new ExcelLibrary();
+		cap = new CreateApplPage();
+		
+		ui.ElementsClick(null, 0);
+		
+	}
+
 
 }

@@ -482,11 +482,11 @@ public final class WebDriverActions extends BaseClass {
 	}
 	
 	// Element Click
-		public void ElementsClick(By by) {
+		public void ElementsClick(By by,int cnt) {
 
 			List<WebElement> elements = driver.findElements(by);
 			int count = elements.size();
-			WebElement ele =elements.get(count-2);
+			WebElement ele =elements.get(count-cnt);
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", ele);
 		
@@ -935,7 +935,7 @@ public final class WebDriverActions extends BaseClass {
 		//	path.click();
 			
 			WebDriverActions ui=new WebDriverActions();
-			ui.click(byPath);
+			ui.JSclick(byPath);
 			Thread.sleep(3000);
 			StringSelection ss = new StringSelection(FilePath);
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
