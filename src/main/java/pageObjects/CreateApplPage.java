@@ -51,9 +51,17 @@ public class CreateApplPage {
 	
 	public By uploadBtn = By.xpath("(//a/input[@type='file'])[1]");
 	
-	public By titleSelectDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[7]");
+	public By consumerNoTxt = By.xpath("//input[@id='CBSI_EBACONS']");
 	
-	public By proofIdenDropDown =By.xpath("(//input[contains(@class,'select-dropdown')])[9]");
+	public By providerDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[5]/ul/li");
+	
+	public By aadharOtpTxt = By.xpath("//input[@id='AdharMobOTP']");
+	
+	public By aadharOtpBtn = By.xpath("//button[@id='AdharIotp']");
+	
+	public By titleSelectDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[7]/ul/li");
+	
+	public By proofIdenDropDown =By.xpath("(//div[contains(@class,'select-wrapper')])[9]/ul/li");
 	
 	public By firstNameTxt = By.xpath("//input[@id='CBSI_CUSFISNAM']");
 	
@@ -67,11 +75,13 @@ public class CreateApplPage {
 	
 	public By ageTxt = By.xpath("//input[@id='CBSI_AGE']");
 	
-	public By categoryDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[10]");
+	public By dobTxt = By.xpath("//input[@id='CBSI_DOB']");
 	
-	public By religionDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[11]");
+	public By categoryDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[10]/ul/li");
 	
-	public By countryDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[12]");
+	public By religionDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[11]/ul/li");
+	
+	public By countryDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[12]/ul/li");
 	
 	public By indianNatilityRadio = By.xpath("//div[contains(@class,'custom-control')]/input[@id='NatIndian']");
 	
@@ -79,17 +89,22 @@ public class CreateApplPage {
 	
 	public By spouceNameTxt = By.xpath("//input[@id='CBSI_SPOUSNAME']");
 	
-	public By maritalDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[13]");
+	public By maritalDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[13]/ul/li");
 	
-	public By profileDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[14]");
+	public By profileDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[14]/ul/li");
 	
-	public By qualifiDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[17]");
+	public By qualifiDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[17]/ul/li");
 	
-	public By assessmentMethodDropDown = By.xpath("(//input[contains(@class,'select-dropdown')])[18]");
+	public By assessmentMethodDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[18]/ul/li");
 	
 	public By noofDepeTxt = By.xpath("//input[@id='CBSI_NOOFDEPEND']");
 	
 	public By ucicTxt = By.xpath("//input[@id='CBSI_LMSCUS']");
 	
 	public By grpIdTxt = By.xpath("//input[@id='CBSI_GROUPTAG']");
+	
+	public By saveBtn = By.xpath("//button[@id='Save1']");
+	
+	public By saveNxtBtn = By.xpath("(//button[text()='Save & Next'])[1]");
+	
 }

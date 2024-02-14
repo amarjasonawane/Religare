@@ -136,9 +136,31 @@ public class LoginToApp extends BaseClass {
 	  Reporter.pass("Aadhar Number is entered");
 	  
 	  ui.JSclick(cap.aadharVerifyBtn);
-	  Thread.sleep(1000);
+	  Thread.sleep(3000);
 	  
-	  ui.ElementsClick(cap.karzaDropDown,7);
+	  Reporter.pass("Alert Text is:"+ui.getAlertText());
+	  Thread.sleep(1000);
+	  ui.acceptAlert();
+	  Thread.sleep(3000);
+	  
+	  ui.JSclick(cap.aadharVerifyBtn);
+	  Thread.sleep(3000);
+	  
+	  ui.acceptAlert();
+	  Thread.sleep(3000);
+	  
+	//  ui.JSclick(cap.aadharVerifyBtn);
+	  //Thread.sleep(3000);
+	  
+//	  ui.click(cap.aadharOtpBtn);
+	  
+	  ui.ElementsClick(cap.karzaDropDown,9);
+	  
+	  ui.type(cap.consumerNoTxt, "4669");
+	  
+	  ui.ElementsClick(cap.providerDropDown, 14);
+	  Reporter.pass("Service Provider is entered");
+	  Thread.sleep(2000);
 	  
 	  s.assertAll();
 		
@@ -151,8 +173,63 @@ public class LoginToApp extends BaseClass {
 		excel=new ExcelLibrary();
 		cap = new CreateApplPage();
 		
-		ui.ElementsClick(null, 0);
+		ui.scrollByVisibilityOfElement(cap.titleSelectDropDown);
+		ui.ElementsClick(cap.titleSelectDropDown, 3);
+		Reporter.pass("Title is selected");
+		Thread.sleep(1000);
 		
+	//	ui.scrollByVisibilityOfElement(cap.proofIdenDropDown);
+		ui.ElementsClick(cap.proofIdenDropDown, 5);
+		Reporter.pass("Proof of Identification is selected");
+		Thread.sleep(1000);
+		
+		ui.type(cap.firstNameTxt, excel.getCellData("Login", 1, 6));
+		Reporter.pass("First Name is entered");
+
+		ui.type(cap.middleNameTxt, excel.getCellData("Login", 1, 7));
+		Reporter.pass("Middle Name is entered");
+		
+		ui.type(cap.lastNameTxt,  excel.getCellData("Login", 1, 8));
+		Reporter.pass("Last Name is entered");
+		
+		ui.type(cap.fatherNameTxt, excel.getCellData("Login", 1, 9));
+		Reporter.pass("Father's Name is entered");
+		
+		ui.type(cap.motherNameTxt,excel.getCellData("Login", 1, 10));
+		Reporter.pass("Mother's Name is entered");
+		
+		ui.type(cap.dobTxt, excel.getCellData("Login", 1, 14));
+		Reporter.pass("DOB is entered");
+		
+		ui.ElementsClick(cap.categoryDropDown, 5);
+		Reporter.pass("Category is selected");
+		
+		ui.ElementsClick(cap.religionDropDown, 5);
+		Reporter.pass("Religion is selected");
+		
+		ui.JSclick(cap.indianNatilityRadio);
+		Reporter.pass("Indian Nationality is selected");
+		
+		ui.ElementsClick(cap.countryDropDown, 117);
+		Reporter.pass("Country is selected");
+		
+		ui.ElementsClick(cap.maritalDropDown, 4);
+		Reporter.pass("Marital status is selected");
+		
+		ui.type(cap.spouceNameTxt, excel.getCellData("Login", 1,11));
+		Reporter.pass("Spouse name is entered");
+		
+		ui.ElementsClick(cap.profileDropDown, 8);
+		Reporter.pass("Profile is selected");
+		
+		ui.ElementsClick(cap.noofDepeTxt, 1);
+		Reporter.pass("No. of dependents");
+		
+		ui.ElementsClick(cap.qualifiDropDown, 13);
+		Reporter.pass("Qualification is selected");
+		
+		ui.ElementsClick(cap.assessmentMethodDropDown, 2);
+		Reporter.pass("Assessment Method is selected");
 	}
 
 
