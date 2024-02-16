@@ -31,7 +31,7 @@ public class CreateApplPage {
 	
 	public By aadharVerifyBtn = By.xpath("(//button[text()='Verify'])[4]");
 	
-	public By verifyBtnTxt = By.xpath("//button[text()='Verified']");
+	public By verifyBtnTxt = By.xpath("//button[text()='Verified'] | //button[text()='Failed']");
 	
 	public By uploadVerifyBtn = By.xpath("(//button[text()='Upload Verify'])[1]");
 	
