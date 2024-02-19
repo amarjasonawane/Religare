@@ -107,7 +107,5 @@ public class CreateApplPage {
 	
 	public By saveNxtBtn = By.xpath("(//button[text()='Save & Next'])[1]");
 	
-	//Create application Page
-
 	
 }
