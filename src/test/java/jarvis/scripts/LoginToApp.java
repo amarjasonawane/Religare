@@ -235,6 +235,9 @@ public class LoginToApp extends BaseClass {
 
 		ui.ElementsClick(cap.assessmentMethodDropDown, 2);
 		Reporter.pass("Assessment Method is selected");
+		
+		ui.click(cap.saveNxtBtn);
+		Reporter.pass("Save and Next Button is clicked");
 	}
 
 }
