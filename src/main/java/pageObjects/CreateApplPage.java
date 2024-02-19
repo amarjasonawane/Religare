@@ -36,7 +36,7 @@ public class CreateApplPage {
 	public By uploadVerifyBtn = By.xpath("(//button[text()='Upload Verify'])[1]");
 	
 	public By proofDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[1]/ul/li");
-	
+
 	public By karzaDropDown = By.xpath("(//div[contains(@class,'select-wrapper')])[2]/ul/li");
 	
 	public By panAdvSubmitBtn = By.xpath("//button[@id='KarzaPopup']");
@@ -108,5 +108,6 @@ public class CreateApplPage {
 	public By saveNxtBtn = By.xpath("(//button[text()='Save & Next'])[1]");
 	
 	//Create application Page
+
 	
 }
