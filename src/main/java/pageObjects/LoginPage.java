@@ -37,18 +37,18 @@ public class LoginPage {
 	
 	public By submitBtn = By.xpath("//input[@type='submit']");
 	
-	public void selectDrop(String varText) throws Exception {
-		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
+	public void selectDrop(String varText1, String varText2) throws Exception {
+		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText1+"')]/preceding-sibling::div/ul/li/span[text()='" +varText2+"']");
 	//	ui.JSclick(dynamicMenu);
 		Thread.sleep(1000);
-		ui.ElementsClick(dynamicMenu,2);
+		ui.JSclick(dynamicMenu);
 	}
 	
 	public void selectDrop1(String varText) throws Exception {
 		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");
 	//	ui.JSclick(dynamicMenu);
 		Thread.sleep(1000);
-		ui.ElementsClick(dynamicMenu,1);
+		ui.ElementsClick(dynamicMenu);
 	}
 	
 }

@@ -61,7 +61,8 @@ public class LoginToApp extends BaseClass {
 		Thread.sleep(1000);
 		Reporter.pass("Individual Button is clicked");
 
-		fp.selectDrop("Product Type");
+		fp.selectDrop("Product Type","Home Loan");
+		fp.selectDrop(excel.getCellData("Create_Lead", 0, 4), excel.getCellData("Create_Lead", 1, 4));
 		Thread.sleep(1000);
 		Reporter.pass("Product Type is selected");
 
@@ -69,11 +70,11 @@ public class LoginToApp extends BaseClass {
 		Thread.sleep(1000);
 		Reporter.pass("Scheme is selected");
 
-		fp.selectDrop("Branch");
+	//	fp.selectDrop("Branch");
 		Thread.sleep(1000);
 		Reporter.pass("Branch is selected");
 
-		fp.selectDrop("Sourced By");
+		//fp.selectDrop("Sourced By");
 		Thread.sleep(1000);
 		Reporter.pass("Sourced By is selected");
 
@@ -106,7 +107,7 @@ public class LoginToApp extends BaseClass {
 
 		ui.JSclick(cap.panAdvProBtn);
 		Reporter.pass("PAN Advanced Profile is clicked");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 				
 		ui.JSclick(cap.panSubmitBtn);
 		Reporter.pass("Submit BUtton is clicked");
@@ -135,7 +136,7 @@ public class LoginToApp extends BaseClass {
 //	  ui.JSclick(cap.uploadBtn);
 //	  Thread.sleep(2000);
 
-		ui.ElementsClick(cap.proofDropDown, 4);
+		ui.ElementsClick(cap.proofDropDown);
 
 		ui.type(cap.aadharField, excel.getCellData("Login", 1, 5));
 		Reporter.pass("Aadhar Number is entered");
@@ -159,11 +160,11 @@ public class LoginToApp extends BaseClass {
 
 //	  ui.click(cap.aadharOtpBtn);
 
-		ui.ElementsClick(cap.karzaDropDown, 9);
+		ui.ElementsClick(cap.karzaDropDown);
 
 		ui.type(cap.consumerNoTxt, "4669");
 
-		ui.ElementsClick(cap.providerDropDown, 14);
+		ui.ElementsClick(cap.providerDropDown);
 		Reporter.pass("Service Provider is entered");
 		Thread.sleep(2000);
 
@@ -179,12 +180,12 @@ public class LoginToApp extends BaseClass {
 		cap = new CreateApplPage();
 
 		ui.scrollByVisibilityOfElement(cap.titleSelectDropDown);
-		ui.ElementsClick(cap.titleSelectDropDown, 3);
+		ui.ElementsClick(cap.titleSelectDropDown);
 		Reporter.pass("Title is selected");
 		Thread.sleep(1000);
 
 		// ui.scrollByVisibilityOfElement(cap.proofIdenDropDown);
-		ui.ElementsClick(cap.proofIdenDropDown, 5);
+		ui.ElementsClick(cap.proofIdenDropDown);
 		Reporter.pass("Proof of Identification is selected");
 		Thread.sleep(1000);
 
@@ -206,34 +207,34 @@ public class LoginToApp extends BaseClass {
 		ui.type(cap.dobTxt, excel.getCellData("Login", 1, 14));
 		Reporter.pass("DOB is entered");
 
-		ui.ElementsClick(cap.categoryDropDown, 5);
+		ui.ElementsClick(cap.categoryDropDown);
 		Reporter.pass("Category is selected");
 
-		ui.ElementsClick(cap.religionDropDown, 5);
+		ui.ElementsClick(cap.religionDropDown);
 		Reporter.pass("Religion is selected");
 
 		ui.JSclick(cap.indianNatilityRadio);
 		Reporter.pass("Indian Nationality is selected");
 
-		ui.ElementsClick(cap.countryDropDown, 117);
+		ui.ElementsClick(cap.countryDropDown);
 		Reporter.pass("Country is selected");
 
-		ui.ElementsClick(cap.maritalDropDown, 4);
+		ui.ElementsClick(cap.maritalDropDown);
 		Reporter.pass("Marital status is selected");
 
 		ui.type(cap.spouceNameTxt, excel.getCellData("Login", 1, 11));
 		Reporter.pass("Spouse name is entered");
 
-		ui.ElementsClick(cap.profileDropDown, 8);
+		ui.ElementsClick(cap.profileDropDown);
 		Reporter.pass("Profile is selected");
 
 		ui.type(cap.noofDepeTxt, excel.getCellData("Login", 1, 13));
 		Reporter.pass("No. of dependents added");
 
-		ui.ElementsClick(cap.qualifiDropDown, 13);
+		ui.ElementsClick(cap.qualifiDropDown);
 		Reporter.pass("Qualification is selected");
 
-		ui.ElementsClick(cap.assessmentMethodDropDown, 2);
+		ui.ElementsClick(cap.assessmentMethodDropDown);
 		Reporter.pass("Assessment Method is selected");
 		
 		//Added save and Next Button

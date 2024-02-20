@@ -482,11 +482,11 @@ public final class WebDriverActions extends BaseClass {
 	}
 	
 	// Element Click
-		public void ElementsClick(By by,int cnt) {
+		public void ElementsClick(By by) {
 
 			List<WebElement> elements = driver.findElements(by);
 			int count = elements.size();
-			WebElement ele =elements.get(count-cnt);
+			WebElement ele =elements.get(count);
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", ele);
 		
