@@ -29,7 +29,7 @@ public class LoginPage {
 	
 	public By nonindividualBtn = By.id("NonIndvdl");
 	
-	public By doneBtn = By.xpath("//button[@id='InitWFI']");
+	public By doneBtn = By.xpath("//button[@id='InitWFI'] | //button[@id='InitWF']");
 	
 	public By unameLbl = By.xpath("(//label[@class='active'])[1]");
 	
