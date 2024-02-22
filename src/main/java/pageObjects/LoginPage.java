@@ -39,10 +39,17 @@ public class LoginPage {
 	
 	public void selectDrop(String varText1, String varText2) throws Exception {
 		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText1+"')]/preceding-sibling::div/ul/li/span[text()='" +varText2+"']");
-	//	ui.JSclick(dynamicMenu);
+//		String text = ui.getAttribute(dynamicMenu,"value");
 		Thread.sleep(1000);
 		ui.JSclick(dynamicMenu);
+	//	return text;
 	}
+	
+	public void selectTableDrop(String varText) throws Exception {
+		By dynamicMenu = By.xpath("//ul/li/span[text()='" +varText+ "']");
+		ui.JSclick(dynamicMenu);
+	}
+	
 	
 	public void selectDrop1(String varText) throws Exception {
 		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText+"')]/preceding-sibling::div/ul/li");

@@ -63,32 +63,32 @@ public class CreateLeadAppl extends BaseClass {
 		ui.JSclick(fp.individualBtn);
 		
 		fp.selectDrop(excel.getCellData("Create_Lead", 0, 4), excel.getCellData("Create_Lead", 1, 4));
+		Reporter.pass("Product Type is selected   " );
 		Thread.sleep(1000);
-		Reporter.pass("Product Type is selected");
+	
 		
-		fp.selectDrop(excel.getCellData("Create_Lead", 0, 8), excel.getCellData("Create_Lead", 1, 8));
-		Thread.sleep(1000);
-		Reporter.pass("Scheme is selected");
-		
-		fp.selectDrop(excel.getCellData("Create_Lead", 0, 12), excel.getCellData("Create_Lead", 1, 12));
-		Thread.sleep(1000);
-		Reporter.pass("Branch is selected");
-		
-		fp.selectDrop(excel.getCellData("Create_Lead", 0, 26), excel.getCellData("Create_Lead", 1, 26));
-		Thread.sleep(1000);
-		Reporter.pass("Sourced By is selected");
-		
-		fp.selectDrop(excel.getCellData("Create_Lead", 2, 26), excel.getCellData("Create_Lead", 3, 26));
-		Thread.sleep(1000);
-		Reporter.pass("Source Name is selected");
-		
-		ui.JSclick(fp.doneBtn);
-		Reporter.pass("Done button is clicked");
-		Thread.sleep(1000);
-		
-		cl.fillLeadData();
-		Reporter.pass("Create Lead data Completed");
-		
+		/*
+		 * fp.selectDrop(excel.getCellData("Create_Lead", 0, 8),
+		 * excel.getCellData("Create_Lead", 1, 8)); Thread.sleep(1000);
+		 * Reporter.pass("Scheme is selected");
+		 * 
+		 * fp.selectDrop(excel.getCellData("Create_Lead", 0, 12),
+		 * excel.getCellData("Create_Lead", 1, 12)); Thread.sleep(1000);
+		 * Reporter.pass("Branch is selected");
+		 * 
+		 * fp.selectDrop(excel.getCellData("Create_Lead", 0, 26),
+		 * excel.getCellData("Create_Lead", 1, 26)); Thread.sleep(1000);
+		 * Reporter.pass("Sourced By is selected");
+		 * 
+		 * fp.selectDrop(excel.getCellData("Create_Lead", 2, 26),
+		 * excel.getCellData("Create_Lead", 3, 26)); Thread.sleep(1000);
+		 * Reporter.pass("Source Name is selected");
+		 * 
+		 * ui.JSclick(fp.doneBtn); Reporter.pass("Done button is clicked");
+		 * Thread.sleep(1000);
+		 * 
+		 * cl.fillLeadData(); Reporter.pass("Create Lead data Completed");
+		 */
 		ScreenRecorderUtil.stopRecord();
 
 	}
