@@ -17,6 +17,7 @@ import base.FrameworkConstants;
 import utilities.ConfigurationSupport;
 import utilities.CustomMethods;
 import utilities.ExcelLibrary;
+import utilities.Reporter;
 import utilities.WebDriverActions;
 
 public class LoginPage {
@@ -39,11 +40,10 @@ public class LoginPage {
 	
 	public void selectDrop(String varText1, String varText2) throws Exception {
 		By dynamicMenu = By.xpath("//label[contains(text(),'" +varText1+"')]/preceding-sibling::div/ul/li/span[text()='" +varText2+"']");
-//		String text = ui.getAttribute(dynamicMenu,"value");
 		Thread.sleep(1000);
 		ui.JSclick(dynamicMenu);
-	//	return text;
-	}
+		
+		}
 	
 	public void selectTableDrop(String varText) throws Exception {
 		By dynamicMenu = By.xpath("//ul/li/span[text()='" +varText+ "']");

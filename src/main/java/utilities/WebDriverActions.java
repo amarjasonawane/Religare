@@ -228,6 +228,7 @@ public final class WebDriverActions extends BaseClass {
 	public void JSclick(By by) throws Exception {
 		try {
 			WebElement ele = driver.findElement(by);
+			String text = ele.getText();
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", ele);
 		} catch (Exception e) {

@@ -86,24 +86,24 @@ public class CreateLeadPage_New {
 	
 	public void fillDropdownData() throws Exception {
 		fp.selectDrop(excel.getCellData("Create_Lead", 0, 3), excel.getCellData("Create_Lead", 1, 3));
-		Reporter.pass("Product Type is selected   ");
+		Reporter.pass("Product Type selected is  :   "  +excel.getCellData("Create_Lead", 1, 3));
 		Thread.sleep(1000);
 
 		fp.selectDrop(excel.getCellData("Create_Lead", 0, 4), excel.getCellData("Create_Lead", 1, 4));
 		Thread.sleep(1000);
-		Reporter.pass("Scheme is selected");
+		Reporter.pass("Scheme selected is  :   "+excel.getCellData("Create_Lead", 1, 4));
 
 		fp.selectDrop(excel.getCellData("Create_Lead", 0, 5), excel.getCellData("Create_Lead", 1, 5));
 		Thread.sleep(1000);
-		Reporter.pass("Branch is selected");
+		Reporter.pass("Branch selected is  :   "+excel.getCellData("Create_Lead", 1, 5));
 
 		fp.selectDrop(excel.getCellData("Create_Lead", 0, 6), excel.getCellData("Create_Lead", 1, 6));
 		Thread.sleep(1000);
-		Reporter.pass("Sourced By is selected");
+		Reporter.pass("Sourced By selected is  :   "+excel.getCellData("Create_Lead", 1, 6));
 
 		fp.selectDrop(excel.getCellData("Create_Lead", 0, 7), excel.getCellData("Create_Lead", 3, 7));
 		Thread.sleep(1000);
-		Reporter.pass("Source Name is selected",true);
+		Reporter.pass("Source Name selected is : "+excel.getCellData("Create_Lead", 3, 7),true);
 
 		ui.JSclick(fp.doneBtn);
 		Reporter.pass("Done button is clicked");
@@ -212,7 +212,7 @@ public class CreateLeadPage_New {
 		ui.type(remarkTxt, excel.getCellData("Create_Lead", 2, 26));
 		Reporter.pass("Remark is entered");
 
-		ui.type(commentsTxt, excel.getCellData("Create_Lead", 2, 27));
+		ui.type(commentsTxt, excel.getCellData("Create_Lead", 1, 27));
 		Reporter.pass("Comment is entered", true);
 
 		ui.JSclick(submitBtn);
